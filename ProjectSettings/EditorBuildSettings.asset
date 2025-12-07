@@ -6,20 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/VRTesting.unity
-    guid: a99d5cdc786ac034a952eff36457bedd
+    path: Assets/Scenes/Start.unity
+    guid: 408329fe72330f84dbc0f2df704a84ba
   - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: 0c17231b3dddad942a8aef5cace0fe7a
-  - enabled: 1
-    path: Assets/Scenes/Bumi.unity
-    guid: 0759aad38d70e7e49af73f323e7bed4c
-  - enabled: 1
-    path: Assets/Scenes/Saturnus.unity
-    guid: d95e2bebe36de6f499ee31a1d83fb5fe
-  - enabled: 1
-    path: Assets/Scenes/End.unity
-    guid: 5b66f7a2e50f53b4b80e120453615741
   - enabled: 1
     path: Assets/Scenes/Merkurius.unity
     guid: ce931083671ae6c408efa93b7252831c
@@ -27,18 +18,27 @@ EditorBuildSettings:
     path: Assets/Scenes/Venus.unity
     guid: 9ca05bf4af48bfe48b08263b38d9876e
   - enabled: 1
-    path: Assets/Scenes/Uranus.unity
-    guid: a0ca3feb33564334f97f914a5d8db07e
-  - enabled: 1
-    path: Assets/Scenes/Jupiter.unity
-    guid: f82edea2c1f76c94fbfe08b3e985c101
+    path: Assets/Scenes/Bumi.unity
+    guid: 0759aad38d70e7e49af73f323e7bed4c
   - enabled: 1
     path: Assets/Scenes/Mars.unity
     guid: eb7bdeb931d6a1c42911e4fa556525ff
   - enabled: 1
+    path: Assets/Scenes/Jupiter.unity
+    guid: f82edea2c1f76c94fbfe08b3e985c101
+  - enabled: 1
+    path: Assets/Scenes/Saturnus.unity
+    guid: d95e2bebe36de6f499ee31a1d83fb5fe
+  - enabled: 1
+    path: Assets/Scenes/Uranus.unity
+    guid: a0ca3feb33564334f97f914a5d8db07e
+  - enabled: 1
     path: Assets/Scenes/Neptunus.unity
     guid: 463897641a9a1914baad38986ac73f55
   - enabled: 1
-    path: Assets/Scenes/UI_Test.unity
-    guid: 3592be8b8b456d548bb48dda5b0fcf8b
+    path: Assets/Scenes/End.unity
+    guid: 5b66f7a2e50f53b4b80e120453615741
+  - enabled: 1
+    path: Assets/Scenes/VRTesting.unity
+    guid: a99d5cdc786ac034a952eff36457bedd
   m_configObjects: {}
