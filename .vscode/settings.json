@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "arvr-uas.sln"
+    "dotnet.defaultSolution": "Project-ARVR-UAS.sln"
 }
