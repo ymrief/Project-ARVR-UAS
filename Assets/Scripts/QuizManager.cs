@@ -8,18 +8,20 @@ public class QA { public string question; public string[] options; public int co
 
 public class QuizManager : MonoBehaviour
 {
+    [Header("UI References")]
     public GameObject quizPanel;
     public TMP_Text questionText;
     public Button[] optionButtons;
     public TMP_Text[] optionTexts;
+    
+    // --- TAMBAHAN BARU: Kotak untuk memasukkan ScoreUI ---
+    public ScoreUI scoreUI; 
+    // -----------------------------------------------------
+
     public List<QA> qas;
 
     int current = 0;
     int score = 0;
-
-    void Start()
-    {
-    }
 
     public void ShowAt(Vector3 worldPos, Transform lookAt = null)
     {
@@ -62,9 +64,17 @@ public class QuizManager : MonoBehaviour
 
     void EndQuiz()
     {
-        // show score via ScoreUI (find or reference)
-        var scoreUI = FindObjectOfType<ScoreUI>();
-        if (scoreUI != null) scoreUI.ShowScore(score, qas.Count);
-        Hide();
+        // --- PERBAIKAN: Nyalakan ScoreUI secara manual ---
+        if (scoreUI != null) 
+        {
+            scoreUI.gameObject.SetActive(true); // Hidupkan objectnya
+            scoreUI.ShowScore(score, qas.Count); // Tampilkan nilainya
+        }
+        else
+        {
+            Debug.LogError("⚠️ LUPA ISI: Masukkan object ScoreUI ke Inspector QuizManager!");
+        }
+
+        Hide(); // Tutup panel soal
     }
 }
