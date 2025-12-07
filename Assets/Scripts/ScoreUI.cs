@@ -1,33 +1,63 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI; // Wajib ada
 
 public class ScoreUI : MonoBehaviour
 {
-    public GameObject panel;
-    public TextMeshProUGUI scoreText;
-    public FadeController fadeController;
-
-    // --- KITA HAPUS FUNGSI START() AGAR TIDAK MATI SENDIRI ---
+    [Header("UI References")]
+    public GameObject panel;            
+    public TextMeshProUGUI scoreText;   
+    public Button tombolUlang;          
     
-    // Fungsi ini dipanggil oleh QuizManager
-    public void ShowScore(int score, int total)
+    // --- SLOT BARU UNTUK TOMBOL KELUAR ---
+    public Button tombolKeluar;         
+
+    void Start()
     {
-        // 1. Pastikan Panel Nyala
-        if (panel != null) 
+        // 1. Setup Tombol Ulang
+        if (tombolUlang != null)
         {
-            panel.SetActive(true);
+            tombolUlang.onClick.RemoveAllListeners();
+            tombolUlang.onClick.AddListener(ProsesUlang);
         }
-        
-        // 2. Tulis Skornya
-        if (scoreText != null) 
+
+        // 2. Setup Tombol Keluar (BARU)
+        if (tombolKeluar != null)
         {
-            scoreText.text = $"Skor: {score}/{total}";
-            Debug.Log($"[ScoreUI] Menampilkan Skor Akhir: {score}/{total}");
+            tombolKeluar.onClick.RemoveAllListeners();
+            tombolKeluar.onClick.AddListener(ProsesKeluar);
         }
     }
 
-    public void OnFinishPressed()
+    public void ShowScore(int score, int total)
     {
-        if (fadeController != null) fadeController.FadeToEnd();
+        if (panel != null) panel.SetActive(true);
+        
+        if (scoreText != null) 
+        {
+            scoreText.text = $"SCORE AKHIR : {score} / {total}";
+        }
+    }
+
+    void ProsesUlang()
+    {
+        // Logic Main Lagi (sama seperti sebelumnya)
+        if (panel != null) panel.SetActive(false);
+        GeminiManager gemini = FindObjectOfType<GeminiManager>();
+        if (gemini != null) gemini.GenerateContent();
+    }
+
+    // --- FUNGSI BARU: KELUAR GAME ---
+    void ProsesKeluar()
+    {
+        Debug.Log("[Game] Tombol Keluar ditekan. Bye bye!");
+        
+        // Perintah untuk menutup aplikasi (saat sudah jadi file .exe / .apk)
+        Application.Quit();
+
+        // Kode tambahan supaya tombolnya bekerja juga di Editor Unity
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
