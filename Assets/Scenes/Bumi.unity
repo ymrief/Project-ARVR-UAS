@@ -134,7 +134,8 @@ GameObject:
   - component: {fileID: 308875616}
   - component: {fileID: 308875615}
   - component: {fileID: 308875614}
-  m_Layer: 0
+  - component: {fileID: 308875618}
+  m_Layer: 6
   m_Name: Teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,6 +230,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308875618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308875613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d8efcfd1e63b604dad31a4fc8db868f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionName: masuk ke Mars
+  oneTimeOnly: 0
+  targetScene: Mars
+  spawnPointTag: SpawnPoint
 --- !u!1 &447863874
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +272,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447863874}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &447863876
 Camera:
   m_ObjectHideFlags: 0
@@ -591,7 +608,7 @@ GameObject:
   - component: {fileID: 1610302721}
   m_Layer: 0
   m_Name: Spawn
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
