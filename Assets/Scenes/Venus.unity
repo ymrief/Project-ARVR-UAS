@@ -122,6 +122,144 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &142834652
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1162281995813780252, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[0]
+      value: Selamat Datang di Venus!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[1]
+      value: Venus sering disebut sebagai "Bintang Kejora" karena bersinar sangat
+        terang di langit pagi atau senja
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[2]
+      value: Meskipun bukan yang terdekat dengan Matahari, Venus adalah planet terpanas
+        karena atmosfernya yang tebal memerangkap panas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[3]
+      value: Ukurannya hampir sama dengan Bumi, sehingga sering disebut sebagai saudara
+        kembar Bumi
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 88.62577
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.993633
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 376.59006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.021403275
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99977094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 182.453
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+--- !u!1001 &891426850
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4180714084180628153, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_Name
+      value: UIRoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.074999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.028927
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.416615
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 3291525483279958987, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
 --- !u!1 &963288114
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,3 +848,5 @@ SceneRoots:
   - {fileID: 2097909731}
   - {fileID: 963288118}
   - {fileID: 1465582250}
+  - {fileID: 142834652}
+  - {fileID: 891426850}

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 59b29d32e856c994a9fa05d3ed50a60c, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 23916da3af1104b4abeb3b9be53334b1, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -122,6 +122,64 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &148146748
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4180714084180628153, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_Name
+      value: UIRoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.074999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.028927
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.416615
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 3291525483279958987, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
 --- !u!1001 &157437510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -446,6 +504,86 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &2054455633
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1162281995813780252, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[0]
+      value: Selamat Datang di Saturnus!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[1]
+      value: Saturnus adalah planet yang paling mudah dikenali karena memiliki cincin
+        indah yang terbuat dari es dan bebatuan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[2]
+      value: Planet raksasa gas ini sebenarnya sangat ringan, bahkan bisa mengapung
+        jika ada kolam air raksasa
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[3]
+      value: Warnanya kekuningan dan merupakan planet terjauh yang bisa dilihat dengan
+        mata telanjang
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.07347442
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.766693
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
 --- !u!1001 &2787885169304853566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -519,3 +657,5 @@ SceneRoots:
   - {fileID: 1104230102}
   - {fileID: 157437510}
   - {fileID: 2787885169304853566}
+  - {fileID: 2054455633}
+  - {fileID: 148146748}

@@ -361,7 +361,7 @@ Transform:
   m_GameObject: {fileID: 455522500}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -76.816, y: 18.92, z: 305.2}
+  m_LocalPosition: {x: -36.8, y: 33.96, z: 276}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -701,6 +701,144 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1784221387
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1162281995813780252, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[0]
+      value: Selamat Datang di Mars!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[1]
+      value: Mars dikenal dengan julukan "Planet Merah" karena tanahnya yang berwarna
+        kemerahan seperti karat besi
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[2]
+      value: Di sini terdapat gunung berapi tertinggi di tata surya yang bernama
+        Olympus Mons
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[3]
+      value: Para ilmuwan sering meneliti Mars untuk mencari tahu apakah pernah ada
+        air di sana
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -33.588024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 47.320072
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 308.52066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+--- !u!1001 &1843136731
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4180714084180628153, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_Name
+      value: UIRoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.074999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.028927
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.416615
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 3291525483279958987, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -710,3 +848,5 @@ SceneRoots:
   - {fileID: 1651526254}
   - {fileID: 694653292}
   - {fileID: 455522504}
+  - {fileID: 1784221387}
+  - {fileID: 1843136731}

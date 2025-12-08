@@ -246,6 +246,85 @@ MonoBehaviour:
   oneTimeOnly: 0
   targetScene: Venus
   spawnPointTag: SpawnPoint
+--- !u!1001 &188163650
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1162281995813780252, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[0]
+      value: Selamat Datang di Merkurius!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[1]
+      value: Merkurius adalah planet terkecil dan letaknya paling dekat dengan Matahari
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[2]
+      value: Karena sangat dekat, planet ini bergerak sangat cepat saat mengelilingi
+        Matahari dibandingkan planet lain
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[3]
+      value: Permukaannya berwarna abu-abu, penuh kawah, dan berbatu mirip dengan
+        Bulan kita
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -133.3103
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 63.704468
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 357.69162
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6697697
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.74256897
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -95.901
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
 --- !u!1 &457067299
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +443,64 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &917669236
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4180714084180628153, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_Name
+      value: UIRoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.074999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.028927
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.416615
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 3291525483279958987, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
 --- !u!1 &1100207047
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,3 +847,5 @@ SceneRoots:
   - {fileID: 1100207050}
   - {fileID: 1429110311}
   - {fileID: 115697253}
+  - {fileID: 188163650}
+  - {fileID: 917669236}

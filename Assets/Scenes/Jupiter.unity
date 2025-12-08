@@ -25,8 +25,8 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 23916da3af1104b4abeb3b9be53334b1, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -122,6 +122,86 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &76770644
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1162281995813780252, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[0]
+      value: Selamat Datang di Jupiter!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[1]
+      value: Jupiter adalah raja planet karena ukurannya yang paling besar di antara
+        semuanya
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[2]
+      value: Planet ini adalah raksasa gas yang memiliki badai besar berwarna merah
+        yang sudah berputar selama ratusan tahun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303392062244290502, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: dialogueLines.Array.data[3]
+      value: Karena ukurannya yang masif, Jupiter memiliki banyak sekali bulan yang
+        mengelilinginya
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.062308546
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.9653392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513856269369228372, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5f950a606c46b346a99ff6768fd8608, type: 3}
 --- !u!1 &401092591
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +320,64 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &552491371
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4180714084180628153, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_Name
+      value: UIRoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.074999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.028927
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -14.416615
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453701818201629408, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 3291525483279958987, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9653970b4761d0e40a0b314a4d172b54, type: 3}
 --- !u!1001 &1549603074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -448,15 +586,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5283891244114970172, guid: fcd1ab9ebc2bd0a438006eae9bf84b4f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5283891244114970172, guid: fcd1ab9ebc2bd0a438006eae9bf84b4f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5283891244114970172, guid: fcd1ab9ebc2bd0a438006eae9bf84b4f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5283891244114970172, guid: fcd1ab9ebc2bd0a438006eae9bf84b4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -468,7 +606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5283891244114970172, guid: fcd1ab9ebc2bd0a438006eae9bf84b4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 150
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 5283891244114970172, guid: fcd1ab9ebc2bd0a438006eae9bf84b4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -511,3 +649,5 @@ SceneRoots:
   - {fileID: 401092593}
   - {fileID: 885598893799918892}
   - {fileID: 1549603074}
+  - {fileID: 76770644}
+  - {fileID: 552491371}
