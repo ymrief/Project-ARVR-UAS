@@ -1,89 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq; // Wajib untuk fitur pengocok (Shuffle)
+using System.Linq; 
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 
 /// <summary>
-/// Script Utama Role 4: AI & Quiz System.
-/// Fitur: Request Soal ke Gemini -> Parsing Data -> Gameplay Manual (Keyboard).
+/// GeminiManager V11.0 (Final Fix)
+/// Fitur: Request ke Google -> Bersihkan Kunci Jawaban (Anti Error Nilai 0) -> Kirim ke UI.
 /// </summary>
 public class GeminiManager : MonoBehaviour
 {
-    [Header("--- 1. PENGATURAN API ---")]
-    [Tooltip("Masukkan API Key 'Default Gemini Project' (...6YQA)")]
-    public string apiKey = "MASUKKAN_KEY_DEFAULT_ANDA_DISINI";
+    [Header("--- 1. KONEKSI KE UI (WAJIB DIISI) ---")]
+    [Tooltip("Tarik object 'Quiz_UI' dari Hierarchy ke sini!")]
+    public QuizManager quizUIRef; 
+
+    [Header("--- 2. PENGATURAN API ---")]
+    [Tooltip("Masukkan API Key di Inspector (Jangan di script agar aman)")]
+    public string apiKey = ""; 
     
-    // URL Model Gemini 2.5 Flash (Tercepat & Stabil)
+    // URL Model Gemini 2.5 Flash
     private string apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
 
-    [Header("--- 2. DATA GAME ---")]
-    public List<QuizData> daftarSoal = new List<QuizData>(); 
-    public int score = 0;
-    
-    // Variabel Internal untuk Logika Game
-    private int nomorSoalAktif = 0; 
-    private bool isGameReady = false;
+    // Data mentah untuk debug
+    private List<QuizData> rawData = new List<QuizData>(); 
 
     void Start()
     {
-        Debug.Log("--- [SYSTEM] MEMULAI KONEKSI KE GEMINI... ---");
+        // Cek apakah referensi UI sudah masuk
+        if (quizUIRef == null)
+        {
+            Debug.LogError("⛔ ERROR: Kolom 'Quiz UI Ref' di Inspector GeminiManager masih KOSONG! Tarik object Quiz_UI kesini.");
+            return;
+        }
+
+        Debug.Log("[Gemini] Memulai proses request soal...");
         GenerateContent();
     }
 
-    // ==================================================================================
-    // BAGIAN A: INPUT CONTROLLER (Keyboard Laptop)
-    // ==================================================================================
-    void Update()
-    {
-        // Jangan baca keyboard kalau soal belum siap atau game sudah tamat
-        if (!isGameReady) return;
-
-        // Deteksi Tombol A, B, atau C
-        if (Input.GetKeyDown(KeyCode.A)) JawabManual("A");
-        if (Input.GetKeyDown(KeyCode.B)) JawabManual("B");
-        if (Input.GetKeyDown(KeyCode.C)) JawabManual("C");
-    }
-
-    void JawabManual(string jawaban)
-    {
-        // 1. Cek Jawaban
-        CheckAnswer(nomorSoalAktif, jawaban);
-
-        // 2. Pindah ke nomor berikutnya
-        nomorSoalAktif++;
-
-        // 3. Cek kondisi game (Lanjut atau Tamat?)
-        if (nomorSoalAktif < daftarSoal.Count)
-        {
-            TampilkanSoalDiConsole(nomorSoalAktif);
-        }
-        else
-        {
-            SelesaikanGame();
-        }
-    }
-
-    // ==================================================================================
-    // BAGIAN B: GENERATE CONTENT (Koneksi ke Google)
-    // ==================================================================================
+    // --- BAGIAN A: GENERATE CONTENT ---
     public void GenerateContent()
     {
-        // 1. Siapkan & Acak Planet
-        List<string> semuaPlanet = new List<string> { 
-            "Merkurius", "Venus", "Bumi", "Mars", 
-            "Jupiter", "Saturnus", "Uranus", "Neptunus" 
+        // 1. Acak Planet
+        List<string> planets = new List<string> { 
+            "Merkurius", "Venus", "Bumi", "Mars", "Jupiter", "Saturnus", "Uranus", "Neptunus" 
         };
-        semuaPlanet = semuaPlanet.OrderBy(x => Random.value).ToList();
+        planets = planets.OrderBy(x => Random.value).ToList();
         
-        // 2. Buat Prompt Dinamis (3 Planet Berbeda)
+        // 2. Buat Prompt
         string prompt = $"Buatkan 3 soal kuis pilihan ganda SANGAT MUDAH (level SD) dengan ketentuan:\n" +
-                        $"- Soal 1 membahas planet {semuaPlanet[0]}\n" +
-                        $"- Soal 2 membahas planet {semuaPlanet[1]}\n" +
-                        $"- Soal 3 membahas planet {semuaPlanet[2]}\n" +
-                        "Gunakan bahasa Indonesia sederhana. Setiap soal punya opsi A, B, C.\n" +
-                        "PENTING: Tulis output DENGAN FORMAT RAW berikut ini tanpa teks lain:\n\n" +
+                        $"- Soal 1: {planets[0]}\n- Soal 2: {planets[1]}\n- Soal 3: {planets[2]}\n" +
+                        "Format RAW Wajib (Pemisah pakai tanda pagar #):\n\n" +
                         "SOAL#Opsi A#Opsi B#Opsi C#KunciJawaban\n" +
                         "SOAL#Opsi A#Opsi B#Opsi C#KunciJawaban\n" +
                         "SOAL#Opsi A#Opsi B#Opsi C#KunciJawaban";
@@ -93,14 +60,12 @@ public class GeminiManager : MonoBehaviour
 
     IEnumerator CallApi(string prompt)
     {
-        // Bungkus JSON (Anti Error 400)
         RequestBody reqBody = new RequestBody();
         reqBody.contents = new RequestContent[] { new RequestContent { parts = new RequestPart[] { new RequestPart { text = prompt } } } };
         
         byte[] bodyRaw = Encoding.UTF8.GetBytes(JsonUtility.ToJson(reqBody));
         string fullUrl = apiUrl + "?key=" + apiKey;
 
-        // Kirim Request
         UnityWebRequest request = new UnityWebRequest(fullUrl, "POST");
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = new DownloadHandlerBuffer();
@@ -113,89 +78,75 @@ public class GeminiManager : MonoBehaviour
             GeminiResponse response = JsonUtility.FromJson<GeminiResponse>(request.downloadHandler.text);
             if (response.candidates != null && response.candidates.Length > 0)
             {
-                ProcessRawTextToQuiz(response.candidates[0].content.parts[0].text);
+                ProcessAndSendToUI(response.candidates[0].content.parts[0].text);
             }
         }
         else
         {
-            Debug.LogError($"[ERROR API] Pesan: {request.error}");
+            Debug.LogError($"[Gemini Error] {request.error}");
         }
     }
 
-    void ProcessRawTextToQuiz(string text)
+    // --- BAGIAN B: PROSES DATA & KIRIM KE UI (LOGIC DIPERBAIKI) ---
+    void ProcessAndSendToUI(string text)
     {
-        daftarSoal.Clear();
-        score = 0;
-        nomorSoalAktif = 0;
+        rawData.Clear();
+        List<QA> uiQuestions = new List<QA>();
 
-        // Parsing Teks menjadi Data Game
         string[] lines = text.Split(new char[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
+        
         foreach (string line in lines)
         {
             string[] parts = line.Split('#');
             if (parts.Length >= 5) 
             {
-                QuizData soalBaru = new QuizData();
-                soalBaru.pertanyaan = parts[0].Trim();
-                soalBaru.opsiA = parts[1].Trim();
-                soalBaru.opsiB = parts[2].Trim();
-                soalBaru.opsiC = parts[3].Trim();
-                soalBaru.kunciJawaban = parts[4].Trim().ToUpper();
-                daftarSoal.Add(soalBaru);
+                // 1. Ambil Data Mentah
+                QuizData qData = new QuizData();
+                qData.pertanyaan = parts[0].Trim();
+                qData.opsiA = parts[1].Trim();
+                qData.opsiB = parts[2].Trim();
+                qData.opsiC = parts[3].Trim();
+                
+                // --- LOGIC BARU: PEMBERSIH KUNCI JAWABAN ---
+                // Mengambil kunci mentah, misal: "A." atau "Jawaban: B" atau " C "
+                string rawKey = parts[4].Trim().ToUpper();
+                
+                int finalIndex = 0; // Default A
+                
+                // Cek kandungan hurufnya saja (lebih aman)
+                if (rawKey.Contains("A")) finalIndex = 0;
+                else if (rawKey.Contains("B")) finalIndex = 1;
+                else if (rawKey.Contains("C")) finalIndex = 2;
+                
+                // Simpan kunci yang sudah bersih
+                qData.kunciJawaban = (finalIndex == 0 ? "A" : (finalIndex == 1 ? "B" : "C"));
+                rawData.Add(qData);
+
+                // 2. Bungkus ke Format UI (QA)
+                QA newQA = new QA();
+                newQA.question = qData.pertanyaan;
+                newQA.options = new string[] { qData.opsiA, qData.opsiB, qData.opsiC };
+                newQA.correctIndex = finalIndex; // Masukkan index angka yang benar (0/1/2)
+
+                uiQuestions.Add(newQA);
+                
+                // Debugging di Console untuk memastikan kunci benar
+                Debug.Log($"Soal: {qData.pertanyaan.Substring(0, 10)}... | Kunci Terbaca: {qData.kunciJawaban} (Index: {finalIndex})");
             }
         }
 
-        Debug.Log($"<color=cyan>[SYSTEM] {daftarSoal.Count} Soal Siap! Silakan Main.</color>");
-        
-        // Mulai Game
-        isGameReady = true;
-        TampilkanSoalDiConsole(0);
-    }
+        Debug.Log($"<color=cyan>[Gemini] Berhasil memproses {uiQuestions.Count} soal. Mengirim ke QuizManager...</color>");
 
-    // ==================================================================================
-    // BAGIAN C: LOGIKA KUIS (Check Answer & Display)
-    // ==================================================================================
-    public void CheckAnswer(int nomorSoal, string jawabanPlayer)
-    {
-        if (nomorSoal >= daftarSoal.Count) return;
-
-        QuizData soal = daftarSoal[nomorSoal];
-        Debug.Log($"[Input] Anda Jawab: {jawabanPlayer}");
-
-        if (jawabanPlayer == soal.kunciJawaban)
+        // 3. Kirim ke QuizManager
+        if (quizUIRef != null)
         {
-            score += 10;
-            Debug.Log("<color=green>JAWABAN BENAR (+10 Poin)</color>");
-        }
-        else
-        {
-            Debug.Log($"<color=red>JAWABAN SALAH (Kunci: {soal.kunciJawaban})</color>");
+            quizUIRef.qas = uiQuestions;
+            // Tampilkan UI di posisi aslinya (agar tidak error kamera)
+            quizUIRef.ShowAt(quizUIRef.transform.position); 
         }
     }
 
-    void TampilkanSoalDiConsole(int index)
-    {
-        QuizData q = daftarSoal[index];
-        Debug.Log("--------------------------------------------------");
-        Debug.Log($"<b>SOAL {index + 1}:</b> {q.pertanyaan}");
-        Debug.Log($"A. {q.opsiA}");
-        Debug.Log($"B. {q.opsiB}");
-        Debug.Log($"C. {q.opsiC}");
-        Debug.Log("<color=yellow>>> TEKAN TOMBOL A, B, atau C DI KEYBOARD UNTUK MENJAWAB <<</color>");
-    }
-
-    void SelesaikanGame()
-    {
-        Debug.Log("=================================");
-        Debug.Log($"<b>GAME SELESAI!</b>");
-        Debug.Log($"<b>SKOR AKHIR ANDA: {score} / 30</b>");
-        Debug.Log("=================================");
-        isGameReady = false; // Matikan input
-    }
-
-    // ==================================================================================
-    // BAGIAN D: STRUKTUR DATA (JSON CLASSES)
-    // ==================================================================================
+    // --- DATA CLASSES ---
     [System.Serializable] public class QuizData { public string pertanyaan, opsiA, opsiB, opsiC, kunciJawaban; }
     [System.Serializable] public class RequestBody { public RequestContent[] contents; }
     [System.Serializable] public class RequestContent { public RequestPart[] parts; }
