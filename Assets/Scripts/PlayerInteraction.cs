@@ -7,19 +7,30 @@ public class PlayerInteraction : MonoBehaviour
     public float rayDistance = 3f;
     public LayerMask interactLayer;
 
-    [Header("UI")]
+    [Header("UI Reference")]
     public CrosshairController crosshair;
 
     void Awake()
     {
-        if (cam == null)
-            cam = GetComponent<Camera>();
+        if (cam == null) cam = GetComponent<Camera>();
     }
 
     void Update()
     {
-        if (cam == null || UIPlayerManager.Instance == null)
-            return;
+        // Safety Check
+        if (cam == null || UIPlayerManager.Instance == null) return;
+
+        // --- PENCEGAH BUG ---
+        // Jika sedang dialog, Matikan Raycast. 
+        // Biarkan UIPlayerManager yang menangani tombol 'E' untuk "Next Text".
+        // Kalau baris ini tidak ada, tombol E akan bentrok (Start vs Next).
+        if (UIPlayerManager.Instance.isDialogueActive) 
+        {
+            // Pastikan prompt interaksi hilang saat dialog
+            UIPlayerManager.Instance.HideInteraction();
+            if (crosshair != null) crosshair.SetInteractable(false);
+            return; 
+        }
 
         RaycastCheck();
     }
@@ -28,13 +39,12 @@ public class PlayerInteraction : MonoBehaviour
     {
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         RaycastHit hit;
-
         bool isLookingAtInteractable = false;
 
         if (Physics.Raycast(ray, out hit, rayDistance, interactLayer))
         {
-            InteractableObject obj =
-                hit.collider.GetComponentInParent<InteractableObject>();
+            // Ambil script InteractableObject (Induk dari NPCInteractable)
+            InteractableObject obj = hit.collider.GetComponentInParent<InteractableObject>();
 
             if (obj != null)
             {
@@ -42,31 +52,30 @@ public class PlayerInteraction : MonoBehaviour
 
                 if (obj.isCanInteract())
                 {
-                    UIPlayerManager.Instance.ShowInteraction(
-                        "Tekan [E] untuk " + obj.interactionName
-                    );
+                    UIPlayerManager.Instance.ShowInteraction("Tekan [E] untuk " + obj.interactionName);
 
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        // ✅ RESET UI SEBELUM INTERACT
+                        // Reset UI prompt sebelum memulai interaksi
                         UIPlayerManager.Instance.HideInteraction();
-                        crosshair.SetInteractable(false);
+                        if (crosshair != null) crosshair.SetInteractable(false);
 
                         obj.Interact();
                         return;
                     }
-
-                } 
-
+                }
             }
         }
 
+        // Jika tidak melihat apa-apa
         if (!isLookingAtInteractable)
         {
             UIPlayerManager.Instance.HideInteraction();
         }
 
         if (crosshair != null)
+        {
             crosshair.SetInteractable(isLookingAtInteractable);
+        }
     }
 }
