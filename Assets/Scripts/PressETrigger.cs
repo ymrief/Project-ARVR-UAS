@@ -17,9 +17,14 @@ public class PressETrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        // --- TAMBAHAN UNTUK CEK ---
+        Debug.Log("Sesuatu menabrak NPC! Bernama: " + other.name + " | Tag: " + other.tag);
+        // ---------------------------
+
         if (other.CompareTag("Player"))
         {
             playerInside = true;
+            Debug.Log("HORE! Player terdeteksi!"); // <-- Cek ini juga
             if (pressEUI != null) pressEUI.SetActive(true);
         }
     }
