@@ -37,17 +37,5 @@ EditorBuildSettings:
     guid: 463897641a9a1914baad38986ac73f55
   - enabled: 1
     path: Assets/Scenes/End.unity
-    guid: 4be95b06cbc441c4aa92ac03447432bc
-  - enabled: 1
-    path: Assets/Scenes/Final.unity
-    guid: 5b66f7a2e50f53b4b80e120453615741
-  - enabled: 1
-    path: Assets/Scenes/Endd.unity
-    guid: 3592be8b8b456d548bb48dda5b0fcf8b
-  - enabled: 1
-    path: Assets/Scenes/UI_Test.unity
-    guid: 17cb366e6a792c84086fffc2619be71f
-  - enabled: 1
-    path: Assets/Scenes/VRTesting.unity
-    guid: a99d5cdc786ac034a952eff36457bedd
+    guid: 1b5884d4a77f8634a8ca7afe09173c2a
   m_configObjects: {}
