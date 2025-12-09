@@ -83,7 +83,14 @@ public class GeminiManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"[Gemini Error] {request.error}");
+            // Mengambil pesan detail dari Google (bukan cuma error code Unity)
+            string errorDetails = request.downloadHandler.text; 
+            
+            Debug.LogError($"[Gemini Error] Code: {request.responseCode}");
+            Debug.LogError($"[Gemini Error] Message: {request.error}");
+            
+            // Ini akan print alasan kenapa 403 (misal: "API key not valid" atau "User location not supported")
+            Debug.LogError($"[Gemini Error] Response Body: {errorDetails}");
         }
     }
 
